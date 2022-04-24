@@ -24,7 +24,7 @@ app.post("/create", (req, res) => {
   db.query(
     "INSERT INTO employees (name, age, country, position, wage) VALUES (?,?,?,?,?)",
     [name, age, country, position, wage],
-    (err, res) => {
+    (err, result) => {
       if (err) {
         console.log(err);
       } else {
