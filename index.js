@@ -34,6 +34,16 @@ app.post("/create", (req, res) => {
   );
 });
 
+app.get("/employees", (req, res) => {
+  db.query("SELECT * FROM employees", (err, result) => {
+    if (err) {
+      console.log(err);
+    } else {
+      res.send(result);
+    }
+  });
+});
+
 app.listen(process.env.PORT || 8080, () => {
   console.log(`Running on port 8080`);
 });
